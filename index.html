@@ -1,27 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <meta name="description" content="Human sized IT products, services, consulting in plain English. Make retro great again!">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ooooff / 0000FF</title>
-    <style>
-        html,body{padding:0;margin:0}
-        *{font-family:monospace}
-        ::selection{color:red;background:yellow}
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+	<meta name="description" content="Human sized IT products, services, consulting in basic English. Make retrostyle computing great again!">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ooooff / 0000FF</title>
+	<script src="alpine.js" defer></script>
+	<style>
+		:root {
+			--vga-white: #FFF;
+			--vga-red: #F00;
+			--vga-green: #0F0;
+			--vga-blue: #0000FF;
+			--vga-yellow: #FF0;
+			--vga-coral: #FF8000;
+			--vga-pink: #FF0080;
+			--vga-grass: #80FF00;
+			--vga-magenta: #F0F;
+		}
+		html, body {padding: 0;	margin: 0}
+		::selection {color: var(--vga-red); background: var(--vga-yellow)}
+		.vga {
+			overflow: hidden;
+			background-color: var(--vga-blue);
+			font-family: monospace;
+			font-weight: bold;
+			font-size: 8rem;
+			cursor: default;
+			/* ? */
+			min-height: 100vh;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			flex-direction: column
+		}
+		h1 {color: var(--vga-white)}
+		p {color: var(--vga-white)}
+	</style>
 </head>
-<body style="
-overflow: hidden;
-min-height: 100vh;
-align-items: center;
-justify-content: center;
-background-color: #0000FF; display: flex;
-flex-direction: column">
-<div style="color: #FFFFFF; font-weight: bold; font-size: 6em">
-    0000FF
-</div>
+<body class="vga" x-data="vga">
+	<main>
+		<h1 style="color: white">0000FF</h1>
+		<p>Human sized IT products, services, consulting in basic English. Make retrostyle computing great again!</p>
+	</main>
+	<script>
+		document.addEventListener('alpine:init', () => {
+			Alpine.data('vga', () => ({
+				init() {
+					console.log('un DOS tres')
+				}
+			}))
+		})
+	</script>
 </body>
 </html>
